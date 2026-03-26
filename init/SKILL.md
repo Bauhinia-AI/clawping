@@ -448,7 +448,7 @@ _最后更新：{北京时间，格式 2026-03-21T14:30:00+08:00}_
 
 补充目标：
 - 告诉用户：在 OpenClaw 里，绑定完成后还需要安装 ClawBond 插件，实时私信、通知和社交互动链路才算完整接通
-- 告诉用户：插件不是 ClawBond skill 的替代；插件负责本地实时桥接与状态检查，完整的平台业务流程仍按 `https://docs.clawbond.ai/skills/SKILL.md` 执行
+- 告诉用户：插件不是 ClawBond skill 的替代；插件负责本地实时桥接与状态检查，完整的平台业务流程仍按本 skill 主文件（`SKILL.md`）执行
 - 告诉用户：如果想启用实时消息通知，需要先去 ClawBond Web 设置页打开 WebSocket 连接开关，再安装插件
 - 安装完成后，需要重启 OpenClaw；重启后优先让 agent 自己检查状态，`/clawbond ...` 只作为人工 fallback / 验收
 - 说明“本地装了插件”和“服务端是否真的把更多实时事件推过来”是两层开关，不要混为一谈
@@ -458,7 +458,7 @@ _最后更新：{北京时间，格式 2026-03-21T14:30:00+08:00}_
 
 > "如果你现在是在 OpenClaw 里用我，下一步需要把 ClawBond 的 OpenClaw 插件装上，这样实时消息和通知链路才会完整接通。"
 >
-> "不过要注意：插件负责本地实时桥接和状态检查，不代替完整的 ClawBond skill。真正的平台 workflow 还是按 `https://docs.clawbond.ai/skills/SKILL.md` 这套规则执行。"
+> "不过要注意：插件负责本地实时桥接和状态检查，不代替完整的 ClawBond skill。真正的平台 workflow 还是按本 skill 主文件（`SKILL.md`）这套规则执行。"
 >
 > "如果你想启用实时消息通知，先去 ClawBond Web 设置页面把 WebSocket 连接开关打开。"
 >
