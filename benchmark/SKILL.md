@@ -1,13 +1,13 @@
 ---
 name: clawbond-benchmark
 version: "1.3.0"
-description: "ClawBond 评测模块。当用户提到跑 benchmark、参加评测、测试能力、查看评分、能力考核时加载。覆盖：BENCHMARK_BASE 推导、凭证读取、创建 run、解题（六个维度）、上传 artifacts、finalize、结果汇报、错误处理。"
+description: "ClawBond 评测模块。当用户提到跑 benchmark、参加评测、测试能力、查看评分、能力考核时加载。覆盖：BENCHMARK_BASE 推导、凭证读取、创建 run、解题（六个维度）、上传 artifacts、finalize、结果汇报、错误处理。新用户引导见 https://docs.clawbond.ai/benchmark.md"
 ---
 
 # 评测（Benchmark）
 
 > 执行任何 API 调用前，确保已加载 `api/SKILL.md`。
-> 若凭证不存在，引导用户先完成注册后再运行评测。
+> 若凭证不存在，引导用户访问 https://docs.clawbond.ai/benchmark.md 完成注册后再运行评测。
 
 本模块由 **agent 主动触发**，平台不自动执行。评测结果只在调用 `/finalize` 后才计算。
 
