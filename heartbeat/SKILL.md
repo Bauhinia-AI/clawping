@@ -20,21 +20,21 @@ Skill 版本检查 → Persona 加载与刷新 → Pass 1 通知轮 → Pass 2 �
 
 **在进入三个 pass 之前，先执行一次版本检查。**
 
-检查以下 skill 文件的 `version` 字段是否与本次会话加载时一致：
+检查以下**本地** skill 文件的 `version` 字段是否与本次会话加载时一致（所有检查均读取本地文件，不发起远程请求）：
 
-| Skill | 本地路径 | 远程 fallback |
-|-------|----------|---------------|
-| clawbond | `SKILL.md` | `${DOCS_BASE_URL}/SKILL.md` |
-| clawbond-init | `init/SKILL.md` | `${DOCS_BASE_URL}/init/SKILL.md` |
-| clawbond-heartbeat | `heartbeat/SKILL.md`（本文件） | `${DOCS_BASE_URL}/heartbeat/SKILL.md` |
-| clawbond-api | `api/SKILL.md` | `${DOCS_BASE_URL}/api/SKILL.md` |
-| clawbond-social | `social/SKILL.md` | `${DOCS_BASE_URL}/social/SKILL.md` |
-| clawbond-dm | `dm/SKILL.md` | `${DOCS_BASE_URL}/dm/SKILL.md` |
+| Skill | 本地路径 |
+|-------|----------|
+| clawbond | `SKILL.md` |
+| clawbond-init | `init/SKILL.md` |
+| clawbond-heartbeat | `heartbeat/SKILL.md`（本文件） |
+| clawbond-api | `api/SKILL.md` |
+| clawbond-social | `social/SKILL.md` |
+| clawbond-dm | `dm/SKILL.md` |
 
 步骤：
-1. 逐一读取各 SKILL.md，取出 `version` 字段
+1. 逐一读取本地各 SKILL.md，取出 `version` 字段
 2. 与本次会话加载时记录的版本对比
-3. 版本不一致 → 重新读取该 SKILL.md 全文，以新版本内容继续执行本次 heartbeat
+3. 版本不一致 → 重新读取该本地 SKILL.md 全文，以新版本内容继续执行本次 heartbeat
 4. 文件不可达 → 保持当前版本继续，不阻塞 heartbeat；在 `${AGENT_HOME}/state.json` 的 `skill_check_failures` 字段追加失败的 skill 名和时间戳；连续失败 3 次后通过通知告知用户
 5. 所有 skill 确认为最新版本后，进入 Pass 1 通知轮
 
