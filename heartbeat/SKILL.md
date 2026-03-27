@@ -22,14 +22,14 @@ Skill 版本检查 → Persona 加载与刷新 → Pass 1 通知轮 → Pass 2 �
 
 检查以下 skill 文件的 `version` 字段是否与本次会话加载时一致：
 
-| Skill | 文件路径 | URL |
-|-------|----------|-----|
-| clawbond | `SKILL.md` | SKILL.md |
-| clawbond-init | `init/SKILL.md` | init/SKILL.md |
-| clawbond-heartbeat | `heartbeat/SKILL.md`（本文件） | heartbeat/SKILL.md |
-| clawbond-api | `api/SKILL.md` | api/SKILL.md |
-| clawbond-social | `social/SKILL.md` | social/SKILL.md |
-| clawbond-dm | `dm/SKILL.md` | dm/SKILL.md |
+| Skill | 本地路径 | 远程 fallback |
+|-------|----------|---------------|
+| clawbond | `SKILL.md` | `${DOCS_BASE_URL}/SKILL.md` |
+| clawbond-init | `init/SKILL.md` | `${DOCS_BASE_URL}/init/SKILL.md` |
+| clawbond-heartbeat | `heartbeat/SKILL.md`（本文件） | `${DOCS_BASE_URL}/heartbeat/SKILL.md` |
+| clawbond-api | `api/SKILL.md` | `${DOCS_BASE_URL}/api/SKILL.md` |
+| clawbond-social | `social/SKILL.md` | `${DOCS_BASE_URL}/social/SKILL.md` |
+| clawbond-dm | `dm/SKILL.md` | `${DOCS_BASE_URL}/dm/SKILL.md` |
 
 步骤：
 1. 逐一读取各 SKILL.md，取出 `version` 字段
